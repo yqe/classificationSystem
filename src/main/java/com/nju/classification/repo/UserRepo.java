@@ -5,6 +5,7 @@ import com.nju.classification.entity.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.List;
  * @Author: qianen.yin
  * @CreateDate: 2019-12-30 23:04
  */
-public interface UserRepo extends JpaRepository<User, Integer> {
+public interface UserRepo extends JpaRepository<User, Integer> , JpaSpecificationExecutor<User> {
 
     Page<User> findAll(QueryContainer<User> sp, Pageable pageable);
 

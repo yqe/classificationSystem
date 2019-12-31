@@ -6,46 +6,42 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Map;
 
 /**
- * @Description: 图片
+ * @Description: 果蔬图片
  * @Author: qianen.yin
- * @CreateDate: 2019-12-31 13:31
+ * @CreateDate: 2019-12-31 16:53
  */
-
 @Data
 @Builder
 @Entity
-@Table(name="picture")
+@Table(name="fruitpic")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Picture {
+public class FruitPic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     /**
-     * 路径
+     * 对应图片id
      */
-    private String path;
+    private int pictureId;
     /**
-     * 上传者（工号）
+     * 收获季节
      */
-    private int uploaderId;
+    private String harvest;
     /**
-     * 上传时间
+     * 种植地区
      */
-    private String createdAt;
-    /**
-     * 删除者（工号）
-     */
-    private int dropperId;
-    /**
-     * 状态
-     */
-    private int status;
+    private String area;
     /**
      * 类别
      */
-    private int category;
-
+    private String category;
+    /**
+     * 大棚种植
+     */
+    private String room;
 }
